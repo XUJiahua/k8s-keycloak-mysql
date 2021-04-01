@@ -1,0 +1,23 @@
+storageClass: alicloud-disk-ssd
+
+## MySQL Authentication parameters
+##
+auth:
+  ## MySQL custom user and database
+  ## ref: https://github.com/bitnami/bitnami-docker-mysql/blob/master/README.md#creating-a-database-on-first-run
+  ## ref: https://github.com/bitnami/bitnami-docker-mysql/blob/master/README.md#creating-a-database-user-on-first-run
+  ##
+  database: keycloak
+  username: "keycloak"
+  ## Existing secret with MySQL credentials
+  ## NOTE: When it's set the previous parameters are ignored.
+  ##
+  existingSecret: mysql
+
+## MySQL Primary parameters
+##
+primary:
+  persistence:
+    ## Persistent Volume size
+    ##
+    size: 20Gi
